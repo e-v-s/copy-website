@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Topbar from './components/topbar/Topbar';
+import './components/topbar/style.css';
 
 function App() {
   const [width, setWidth] = useState(window.innerWidth);
@@ -36,7 +37,7 @@ function App() {
   return (
     <div className="App">
     {
-      width < 620 ? <Topbar onClick={() => handleClick()} btnShow={btnShow} topbarMenuStyle={{display: styleMenu} && topbarContent} topbarContentStyle={{display: 'flex', justifyContent: 'space-between',}} logo={{background: 'transparent', fontWeight: '500', marginLeft: '15px', fontSize: '25px',}} /> : <Topbar btnShow={btnShow} topbar={{display: 'flex', justifyContent: 'space-between'}} topbarMenuStyle={{display: 'flex', listStyle: 'none', justifyContent: 'space-between', width: '50%'}} />
+      width < 620 ? <Topbar onClick={() => handleClick()} btnShow={btnShow} topbarMenuStyle={{display: styleMenu} && topbarContent} topbarContentStyle={{display: 'flex', justifyContent: 'space-between',}} logo={{background: 'transparent', fontWeight: '300', marginLeft: '15px', fontSize: '40px', fontFamily: "'Hind Madurai', sans-serif", color: '#420212', cursor: 'pointer'}} /> : <Topbar btnShow={btnShow} topbar={{display: 'flex', justifyContent: 'space-around', marginTop: '30px'}} topbarMenuStyle={{display: 'flex', listStyle: 'none', justifyContent: 'space-between', width: '50%'}} logo={{background: 'transparent', fontWeight: '300', marginLeft: '15px', fontSize: '40px', marginTop: '0', fontFamily: "'Hind Madurai', sans-serif", color: '#420212', cursor: 'pointer'}} />
     }
     <p style={{display: showPage}}>oi</p>
       
