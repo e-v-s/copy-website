@@ -4,7 +4,7 @@ import './style.css';
 
 const Topbar = (props) => {	
 	return (
-		<div className="Topbar" style={{marginBottom: '40px'}}>
+		<div className="Topbar">
 			<div className="Topbar-content" style={props.topbar}>
 				<div style={props.topbarContentStyle}>
 					<p className="Topbar-logo hvr-wobble-vertical" style={props.logo}>{'<Evs />'}</p>
@@ -13,10 +13,10 @@ const Topbar = (props) => {
 					</button>
 				</div>
 				<ul className="Topbar-menu" style={props.topbarMenuStyle}>
-					<li className="Topbar-menu-item" style={{fontWeight:'100', marginBottom: '10px', color: '#420212', cursor: 'pointer'}} onClick={() => props.onClick}>Work</li>
-					<li className="Topbar-menu-item" style={{fontWeight:'100', marginBottom: '10px', color: '#420212', cursor: 'pointer'}}>About</li>
-					<li className="Topbar-menu-item" style={{fontWeight:'100', marginBottom: '10px', color: '#420212', cursor: 'pointer'}}>Services</li>
-					<li className="Topbar-menu-item" style={{fontWeight:'100', marginBottom: '10px', color: '#420212', cursor: 'pointer'}}>Projects</li>
+					<li className="Topbar-menu-item" style={{fontWeight:'100', marginBottom: '10px', cursor: 'pointer'}} onClick={() => props.onClick}>Work</li>
+					<li className="Topbar-menu-item" style={{fontWeight:'100', marginBottom: '10px', cursor: 'pointer'}}>About</li>
+					<li className="Topbar-menu-item" style={{fontWeight:'100', marginBottom: '10px', cursor: 'pointer'}}>Services</li>
+					<li className="Topbar-menu-item" style={{fontWeight:'100', marginBottom: '10px', cursor: 'pointer'}}>Projects</li>
 				</ul>
 			</div>
 		</div>
