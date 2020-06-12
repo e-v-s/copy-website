@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Topbar from './components/topbar/Topbar';
+import Body from './components/body/Body';
+import './components/topbar/style.css';
 
 function App() {
   const [width, setWidth] = useState(window.innerWidth);
@@ -17,7 +19,7 @@ function App() {
   }, [width]);
 
   useEffect(() => {
-    width > 600 ? setBtnShow({visibility: 'hidden'}) && setShowPage('block') : setBtnShow({border: 'none', backgroundColor: '#fff', outline: 'none', marginRight: '10px'});
+    width > 720 ? setBtnShow({visibility: 'hidden'}) && setShowPage('block') : setBtnShow({border: 'none', backgroundColor: '#fff', outline: 'none', marginRight: '10px'});
   },[width]);
 
  
@@ -36,10 +38,13 @@ function App() {
   return (
     <div className="App">
     {
-      width < 620 ? <Topbar onClick={() => handleClick()} btnShow={btnShow} topbarMenuStyle={{display: styleMenu} && topbarContent} topbarContentStyle={{display: 'flex', justifyContent: 'space-between',}} logo={{background: 'transparent', fontWeight: '500', marginLeft: '15px', fontSize: '25px',}} /> : <Topbar btnShow={btnShow} topbar={{display: 'flex', justifyContent: 'space-between'}} topbarMenuStyle={{display: 'flex', listStyle: 'none', justifyContent: 'space-between', width: '50%'}} />
+      width < 720 ? <Topbar onClick={() => handleClick()} btnShow={btnShow} topbarMenuStyle={{display: styleMenu} && topbarContent} topbarContentStyle={{display: 'flex', justifyContent: 'space-between',}} logo={{background: 'transparent', fontWeight: '300', marginLeft: '15px', fontSize: '40px', fontFamily: "'Hind Madurai', sans-serif", cursor: 'pointer'}} /> : <Topbar btnShow={btnShow} topbar={{display: 'flex', justifyContent: 'space-around', margin: '0 auto', maxWidth: '1020px', alignItems: 'center'}} topbarMenuStyle={{display: 'flex', listStyle: 'none', justifyContent: 'space-between', width: '50%'}} logo={{background: 'transparent', fontWeight: '300', fontSize: '40px', fontFamily: "'Hind Madurai', sans-serif", cursor: 'pointer'}} />
     }
-    <p style={{display: showPage}}>oi</p>
-      
+      <div style={{display: showPage}}>
+        {
+          width < 720 ? <Body style={{marginTop: '30px'}} /> : <Body style={{maxWidth: '1020px', margin: '60px auto', textAlign: 'justify'}}/>  
+        }
+      </div>      
     </div>
   );
 }
